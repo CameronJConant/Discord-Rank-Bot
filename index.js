@@ -2,18 +2,15 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require('fs');
 
-const token = 'NTg4MDM5MTI5OTQ2NjUyNjg1.XP_alA.uslEq-Hd4kCzM7ySx4QOeWceUbI';
-
 bot.on('ready', () => {
-    console.log('This bot is online');
+    console.log(`Connected to Discord successfully as ${bot.user.tag}.`);
 })
 
 // Prefix for calling the bot
 const PREFIX = '&';
-const UserPrefix = '$';
 
-//Reads messages sent to bot and carries out commands
-//Takes input of a message and breaks down message into an
+// Reads messages sent to bot and carries out commands
+// Takes input of a message and breaks down message into an
 // arguments array.
 
 var rankupmessage = "Congratulations on being promoted to the rank of ";
@@ -336,9 +333,8 @@ bot.on('message', msg => {
 
             }
         }
-        else { };
     }
-    else { };
 
-})
-bot.login(token);
+});
+
+bot.login(require("./config.json").token);
